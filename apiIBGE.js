@@ -55,6 +55,7 @@ async function contarRegistrosPorNome(nome) {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: {
             position: "top",
