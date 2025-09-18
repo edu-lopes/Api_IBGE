@@ -15,7 +15,7 @@
     }
 
     .container {
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
       background: white;
       padding: 20px;
@@ -29,9 +29,24 @@
       color: #2c3e50;
     }
 
+    .content {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .left {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .right {
+      flex: 1;
+      min-width: 300px;
+    }
+
     .input-group {
       display: flex;
-      justify-content: center;
       margin-bottom: 20px;
     }
 
@@ -39,7 +54,7 @@
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 8px 0 0 8px;
-      width: 60%;
+      width: 70%;
       font-size: 16px;
     }
 
@@ -58,10 +73,6 @@
       background: #2980b9;
     }
 
-    #resultado {
-      margin-top: 20px;
-    }
-
     #resultado ul {
       list-style: none;
       padding: 0;
@@ -75,20 +86,28 @@
     }
 
     canvas {
-      margin-top: 30px;
+      width: 100% !important;
+      height: auto !important;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Consulta de Nomes - IBGE</h1>
-    <div class="input-group">
-      <input type="text" id="nomeInput" placeholder="Digite um nome...">
-      <button onclick="buscarNome()">Buscar</button>
-    </div>
 
-    <div id="resultado"></div>
-    <canvas id="grafico"></canvas>
+    <div class="content">
+      <!-- Coluna esquerda -->
+      <div class="left">
+        <div class="input-group">
+          <input type="text" id="nomeInput" placeholder="Digite um nome...">
+          <button onclick="buscarNome()">Buscar</button>
+        </div>
+        <div id="resultado"></div>
+      </div>
+      <div class="right">
+        <canvas id="grafico"></canvas>
+      </div>
+    </div>
   </div>
   <script src="apiIBGE.js"></script>
 </body>
